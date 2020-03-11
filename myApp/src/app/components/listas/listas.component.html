@@ -1,6 +1,8 @@
-<ion-list color='dark'>
-  <ion-item-sliding *ngFor='let lista of deseosService.listas; let i = index'
-                    class="animated fadeInDown">
+<ion-list #test color='dark' #lista>
+  <ion-item-sliding *ngFor='let lista of deseosService.listas | filtroCompletado: terminada'
+                    class="animated fadeInDown"
+                    color='dark'
+                    >
     <ion-item 
               detail
               color='dark'
@@ -10,10 +12,19 @@
         {{lista.items.length}} items
       </ion-note>
     </ion-item>
+
+    <ion-item-options side="start">
+      <ion-item-option (click)="editarNombre(lista)" color="success">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
     <ion-item-options side="end">
       <ion-item-option (click)="borrarLista(lista)" color="danger">
         <ion-icon slot="icon-only"name="trash-outline"></ion-icon>
       </ion-item-option>
     </ion-item-options>
+
+
   </ion-item-sliding>
 </ion-list>

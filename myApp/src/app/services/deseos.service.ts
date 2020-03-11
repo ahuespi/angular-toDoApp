@@ -12,6 +12,15 @@ export class DeseosService {
     this.cargarStorage()
   }
   
+  // editarLista(newName:string,oldName:string){
+  //   this.listas.map(lista => {
+  //     if(lista.title == oldName) {
+  //       lista.title = newName
+  //     }
+  //   })
+  //   this.guardarStorage();
+  // }
+
   crearLista(titulo:string){
     const newList = new Lista(titulo);
     this.listas.push(newList)
@@ -29,7 +38,6 @@ export class DeseosService {
     return this.listas.find(listaData => {
       return listaData.id === id;
     })
-
   }
 
   guardarStorage(){

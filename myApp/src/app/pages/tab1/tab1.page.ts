@@ -25,6 +25,7 @@ export class Tab1Page {
         inputs: [{
             name: 'titulo',
             type: 'text',
+            value: 'Valor por defecto',
             placeholder: 'Ingrese una nueva tarea'
           }],
           buttons:[
