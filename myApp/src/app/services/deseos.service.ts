@@ -18,6 +18,12 @@ export class DeseosService {
     this.guardarStorage();
     return newList.id;
   }
+
+  borrarLista(lista:Lista){
+    this.listas = this.listas.filter( listaData =>  listaData.id !== lista.id );
+    this.guardarStorage()
+  }
+
   obtenerLista(id : string |number){
     id = Number(id);
     return this.listas.find(listaData => {

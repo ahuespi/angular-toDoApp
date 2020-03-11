@@ -49,13 +49,5 @@ export class Tab1Page {
         
         alert.present()
       }
-      
-  irLista(lista:Lista){
-    this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`)
-  }
 
-  borrar(i:number){
-    this.lista.items.splice(i,1)
-    this.deseosService.guardarStorage()
-  }
 }

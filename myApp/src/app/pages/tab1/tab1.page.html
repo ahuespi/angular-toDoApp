@@ -1,32 +1,14 @@
-<ion-header no-border [translucent]="false">
+<ion-header no-border >
   <ion-toolbar color='dark'>
     <ion-title>
-      Mercado
+      Pendientes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" color='dark'>
-  <ion-list color='dark'>
-    <ion-item-sliding *ngFor='let lista of deseosService.listas; let i = index'
-                      class="animated fadeInDown">
-
-      <ion-item 
-                detail
-                color='dark'
-                (click)="irLista(lista)">
-        <ion-label>{{lista.title}}</ion-label>
-        <ion-note slot="end">
-          {{lista.items.length}} items
-        </ion-note>
-      </ion-item>
-      <ion-item-options side="end">
-        <ion-item-option (click)="borrar(i)" color="danger">
-          <ion-icon slot="icon-only"name="trash-outline"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
+  <app-listas [terminada]="false"></app-listas>
+  
 
   <ion-fab vertical='bottom' horizontal="end" slot='fixed'>
     <ion-fab-button color='tertiary' (click)="agregarLista()">
